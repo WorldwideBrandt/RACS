@@ -28,8 +28,8 @@ from datetime import datetime
 # Name and number of the DAQ system that this instance of the code is 
 # installed. These values are used for file naming and radio response 
 # sequencing.
-DAQ_NAME = 'DAQ_F'
-DAQ_NUM = 6
+DAQ_NAME = 'DAQ_E'
+DAQ_NUM = 5
 
 # Total number of DAQ/RADIO Systems in measurement array (this value is 
 # used for timing the radio responses from each DAQ).
