@@ -39,6 +39,9 @@ NUM_OF_DAQS = 6
 # of recording... this delay allows time for responses from each DAQ
 RESPONSE_DELAY = 18
 
+# Extra time (s) allowed during trigger message to allow for ignition of explosive fuse
+EXTRA_LEAD_TIME = 69
+
 # MCC118 Channels to record from
 channels = [0, 7]
 
@@ -183,6 +186,9 @@ class PrintLines(LineReader):
             RadioResponseFirstDelay()
             self.send_cmd('radio tx '+TRIGG_HEX, delay=0)
             RadioResponseSecondDelay()
+            
+            # Allow for extra wait time for lighting fuse
+            time.sleep(EXTRA_LEAD_TIME)
             
             # Setting trigger flag
             CMD_RECEIVED = 0
